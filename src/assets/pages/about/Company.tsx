@@ -150,7 +150,10 @@ const Company = () => {
           pt-[125px]
           pb-16
           md:px-12
-          lg:px-20
+          lg:px-10
+          xl:px-20
+          max-[380px]:px-3
+          max-[380px]:pt-24
         "
       >
 
@@ -231,7 +234,8 @@ const Company = () => {
             mt-12
             grid
             items-center
-            gap-14
+            gap-8
+            sm:gap-10
             lg:grid-cols-[0.95fr_1.05fr]
           "
         >
@@ -287,7 +291,11 @@ const Company = () => {
                 tracking-[-0.065em]
                 sm:text-[85px]
                 md:text-[105px]
+                lg:text-[78px]
                 xl:text-[125px]
+                max-[1100px]:text-[76px]
+                max-[380px]:mt-5
+                max-[380px]:text-[42px]
               "
             >
               THE
@@ -326,6 +334,9 @@ const Company = () => {
                 text-[14px]
                 leading-7
                 md:text-[15px]
+                max-[380px]:mt-5
+                max-[380px]:text-[13px]
+                max-[380px]:leading-6
               "
               style={{
                 color: HERO_THEME.textMuted,
@@ -345,7 +356,7 @@ const Company = () => {
     duration: 0.6,
     ease: 'easeOut',
   }}
-  className="mt-9 flex flex-wrap gap-3"
+  className="mt-9 flex flex-wrap gap-3 max-[380px]:mt-6 max-[380px]:gap-2"
 >
   {/* MAIN ROLE */}
   <div
@@ -519,7 +530,7 @@ const Company = () => {
   src={companyImage}
   alt={companyInfo.role}
   className="
-    h-[380px]
+    h-[250px]
     w-full
     object-contain
     p-3
@@ -527,8 +538,10 @@ const Company = () => {
     transition-all
     duration-700
     group-hover:opacity-100
+    sm:h-[380px]
     md:h-[470px]
-    lg:h-[520px]
+    lg:h-[420px]
+    xl:h-[520px]
   "
 />
 
@@ -579,6 +592,11 @@ const Company = () => {
                   px-3
                   py-2
                   backdrop-blur-md
+                  max-[380px]:left-3
+                  max-[380px]:top-3
+                  max-[380px]:max-w-[calc(100%-24px)]
+                  max-[380px]:px-2
+                  max-[380px]:py-1.5
                 "
                 style={{
                   borderColor: HERO_THEME.borderPrimary,
@@ -590,6 +608,8 @@ const Company = () => {
                     font-mono
                     text-[7px]
                     tracking-[0.25em]
+                    max-[380px]:text-[6px]
+                    max-[380px]:tracking-[0.12em]
                   "
                   style={{
                     color: HERO_THEME.primary,
@@ -603,6 +623,7 @@ const Company = () => {
     mt-1
     text-[11px]
     font-semibold
+    max-[380px]:text-[9px]
   "
   style={{
     color: HERO_THEME.text,
@@ -622,6 +643,9 @@ const Company = () => {
                   flex
                   items-end
                   justify-between
+                  max-[380px]:bottom-3
+                  max-[380px]:left-3
+                  max-[380px]:right-3
                 "
               >
 <div>
@@ -640,6 +664,7 @@ const Company = () => {
       text-[20px]
       font-bold
       tracking-[-0.03em]
+      max-[380px]:text-[14px]
     "
     style={{
       color: HERO_THEME.text,
@@ -717,6 +742,7 @@ const Company = () => {
             mt-28
             max-w-[950px]
             text-center
+            max-[380px]:mt-16
           "
         >
 

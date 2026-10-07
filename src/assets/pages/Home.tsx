@@ -15,19 +15,21 @@ const Home = () => {
   useEffect(() => {
     const scrollTarget = location.state?.scrollTo
 
-    if (scrollTarget !== 'experience') return
+    if (scrollTarget !== 'experience' && scrollTarget !== 'home') return
 
     const timer = window.setTimeout(() => {
-      const element = document.getElementById('experience')
+      const element = document.getElementById(scrollTarget)
 
       if (!element) return
 
       const navbarOffset = 88
 
-      const target =
+      const target = Math.max(
+        0,
         element.getBoundingClientRect().top +
         window.scrollY -
         navbarOffset
+      )
 
       window.scrollTo({
         top: target,

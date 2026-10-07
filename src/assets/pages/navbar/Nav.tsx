@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import Nav_left from './Nav_left'
 import Nav_mid from './Nav_mid'
 import Nav_rght from './Nav_rght'
+import Nav_mobile from './Nav_mobile'
 
 const Nav = () => {
   const isHovering = useRef(false)
@@ -26,10 +27,8 @@ const Nav = () => {
     }
 
     const hideNavbar = () => {
-      // Never hide while cursor is on navbar
       if (isHovering.current) return
 
-      // Always keep visible near the top
       if (window.scrollY <= 80) {
         showNavbar()
         return
@@ -46,14 +45,12 @@ const Nav = () => {
     }
 
     const handleScroll = () => {
-      // Show immediately when scrolling
       showNavbar()
 
       if (scrollTimer.current) {
         clearTimeout(scrollTimer.current)
       }
 
-      // Wait until scrolling stops
       scrollTimer.current = setTimeout(() => {
         hideNavbar()
       }, 900)
@@ -72,8 +69,6 @@ const Nav = () => {
     const handleMouseLeave = () => {
       isHovering.current = false
 
-      // Don't immediately hide.
-      // Give the user time to move away naturally.
       if (window.scrollY > 80) {
         if (scrollTimer.current) {
           clearTimeout(scrollTimer.current)
@@ -85,7 +80,6 @@ const Nav = () => {
       }
     }
 
-    // Initial state
     gsap.set(navbar, {
       y: 0,
       opacity: 1,
@@ -102,8 +96,15 @@ const Nav = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
 
-      navbar.removeEventListener('mouseenter', handleMouseEnter)
-      navbar.removeEventListener('mouseleave', handleMouseLeave)
+      navbar.removeEventListener(
+        'mouseenter',
+        handleMouseEnter
+      )
+
+      navbar.removeEventListener(
+        'mouseleave',
+        handleMouseLeave
+      )
 
       if (scrollTimer.current) {
         clearTimeout(scrollTimer.current)
@@ -125,21 +126,80 @@ const Nav = () => {
         h-[88px]
         w-full
         items-center
-        px-10
-        py-3
         border-b
         border-white/[0.06]
         bg-[#06070B]/75
         backdrop-blur-md
+
+        px-10
+        py-3
+
+        max-[1024px]:h-[76px]
+        max-[1024px]:px-5
+        max-[1024px]:py-2
+
+        max-[768px]:h-[72px]
+        max-[768px]:px-4
+
+        max-[425px]:h-[68px]
+        max-[425px]:px-4
+
+        max-[320px]:h-[64px]
+        max-[320px]:px-3
       "
     >
+      {/* LEFT LOGO */}
+
       <Nav_left />
 
-      <div className="flex min-w-0 flex-1 justify-center">
+      {/* DESKTOP MENU */}
+
+      <div
+        className="
+          flex
+          min-w-0
+          flex-1
+          justify-center
+
+          max-[1024px]:hidden
+        "
+      >
         <Nav_mid />
       </div>
 
-      <Nav_rght />
+      {/* RIGHT SIDE */}
+
+      <div
+        className="
+          ml-auto
+          flex
+          items-center
+
+          gap-5
+
+          max-[1024px]:gap-3
+
+          max-[768px]:gap-2
+
+          max-[425px]:gap-2
+
+          max-[320px]:gap-1
+        "
+      >
+        {/* AVAILABLE / LET'S TALK */}
+
+        <div
+          className="
+            max-[768px]:hidden
+          "
+        >
+          <Nav_rght />
+        </div>
+
+        {/* TABLET / MOBILE SLIDER */}
+
+        <Nav_mobile />
+      </div>
     </nav>
   )
 }

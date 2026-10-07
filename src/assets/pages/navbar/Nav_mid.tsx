@@ -57,7 +57,6 @@ const Nav_mid = () => {
     }
   }, [])
 
-
   /* =========================================================
      NAVIGATION
   ========================================================= */
@@ -84,40 +83,51 @@ const Nav_mid = () => {
     })
   }
 
-
   return (
     <div
       className="
         flex
         min-w-0
         items-center
+
         gap-8
         ml-30
+
         text-sm
         font-medium
         tracking-[-0.01em]
+
+        max-[1200px]:gap-6
+        max-[1200px]:ml-12
+        max-[1200px]:text-[13px]
+
+        max-[1100px]:gap-4
+        max-[1100px]:ml-5
+        max-[1100px]:text-[12px]
+
+        max-[1050px]:gap-3
+        max-[1050px]:ml-2
+        max-[1050px]:text-[11px]
+
+        max-[1024px]:hidden
       "
       style={{
         color: HERO_THEME.textMuted,
       }}
     >
-
       {navItems.map((item) => {
-
         const isActive =
           active === item.name
 
         return (
           <motion.button
             key={item.name}
-
             onClick={() =>
               handleNavigation(
                 item.name,
                 item.id
               )
             }
-
             className="
               nav-item
               relative
@@ -125,12 +135,20 @@ const Nav_mid = () => {
               whitespace-nowrap
               rounded-md
               border-none
+              bg-transparent
               px-2
               py-1.5
               outline-none
-              bg-transparent
-            "
 
+              max-[1200px]:px-1.5
+              max-[1200px]:py-1
+
+              max-[1100px]:px-1
+              max-[1100px]:py-1
+
+              max-[1050px]:px-0.5
+              max-[1050px]:py-0.5
+            "
             animate={{
               scale: isActive
                 ? 1.04
@@ -140,22 +158,17 @@ const Nav_mid = () => {
                 ? HERO_THEME.text
                 : HERO_THEME.textMuted,
             }}
-
             whileHover={{
-              color:
-                HERO_THEME.text,
+              color: HERO_THEME.text,
             }}
-
             whileTap={{
               scale: 0.98,
             }}
-
             transition={{
               duration: 0.2,
               ease: 'easeOut',
             }}
           >
-
             {/* =================================================
                 ACTIVE BACKGROUND
             ================================================= */}
@@ -163,7 +176,6 @@ const Nav_mid = () => {
             {isActive && (
               <motion.span
                 layoutId="activeNav"
-
                 className="
                   pointer-events-none
                   absolute
@@ -171,7 +183,6 @@ const Nav_mid = () => {
                   rounded-md
                   border
                 "
-
                 style={{
                   backgroundColor:
                     `${HERO_THEME.primary}12`,
@@ -184,14 +195,12 @@ const Nav_mid = () => {
                     ${HERO_THEME.glowButton}
                   `,
                 }}
-
                 transition={{
                   duration: 0.25,
                   ease: 'easeOut',
                 }}
               />
             )}
-
 
             {/* =================================================
                 ACTIVE TOP ACCENT
@@ -200,7 +209,6 @@ const Nav_mid = () => {
             {isActive && (
               <motion.span
                 layoutId="activeNavAccent"
-
                 className="
                   pointer-events-none
                   absolute
@@ -211,7 +219,6 @@ const Nav_mid = () => {
                   -translate-x-1/2
                   rounded-full
                 "
-
                 style={{
                   background: `
                     linear-gradient(
@@ -224,14 +231,12 @@ const Nav_mid = () => {
                   boxShadow:
                     `0 0 8px ${HERO_THEME.primary}`,
                 }}
-
                 transition={{
                   duration: 0.25,
                   ease: 'easeOut',
                 }}
               />
             )}
-
 
             {/* =================================================
                 NAV TEXT
@@ -245,11 +250,9 @@ const Nav_mid = () => {
             >
               {item.name}
             </span>
-
           </motion.button>
         )
       })}
-
     </div>
   )
 }
