@@ -138,7 +138,7 @@ const School = () => {
       {/* =====================================================
           MAIN CONTENT
       ===================================================== */}
-      <div className="relative z-10 mx-auto max-w-[1450px] px-6 pt-[125px] pb-16 md:px-12 lg:px-10 xl:px-20 max-[380px]:px-3 max-[380px]:pt-24">
+      <div className="relative z-10 mx-auto max-w-[1450px] px-6 pt-[125px] pb-16 md:px-12 lg:px-10 xl:px-20 max-[380px]:px-3 max-[380px]:pt-24 max-[640px]:px-4 max-[640px]:pt-24">
 
         {/* =================================================
             TOP BAR
@@ -211,7 +211,7 @@ const School = () => {
         {/* =================================================
             HERO
         ================================================= */}
-        <div className="mt-12 grid items-center gap-8 sm:gap-10 lg:grid-cols-[0.95fr_1.05fr] max-[380px]:mt-8">
+        <div className="mt-12 grid items-center gap-8 sm:gap-10 lg:grid-cols-[0.95fr_1.05fr] max-[380px]:mt-8 max-[640px]:mt-8 max-[640px]:gap-6">
 
           {/* LEFT */}
           <div>
@@ -267,8 +267,9 @@ const School = () => {
                 lg:text-[78px]
                 xl:text-[125px]
                 max-[1100px]:text-[76px]
+                max-[640px]:text-[48px]
                 max-[380px]:mt-5
-                max-[380px]:text-[42px]
+                max-[380px]:text-[40px]
               "
             >
               THE
@@ -310,6 +311,9 @@ const School = () => {
                 max-[380px]:mt-5
                 max-[380px]:text-[13px]
                 max-[380px]:leading-6
+                max-[640px]:mt-5
+                max-[640px]:text-[13px]
+                max-[640px]:leading-6
               "
               style={{
                 color: HERO_THEME.textMuted,
@@ -324,7 +328,7 @@ const School = () => {
   initial={{ opacity: 0, y: 15 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.4, duration: 0.6 }}
-  className="mt-9 flex flex-wrap gap-3 max-[380px]:mt-6 max-[380px]:gap-2"
+  className="mt-9 flex flex-wrap gap-3 max-[380px]:mt-6 max-[380px]:gap-2 max-[640px]:mt-6 max-[640px]:gap-2"
 >
   <div
     className="flex items-center gap-2 rounded-full border px-4 py-2"
@@ -460,6 +464,8 @@ const School = () => {
     md:h-[470px]
     lg:h-[420px]
     xl:h-[520px]
+    max-[640px]:h-[300px]
+    max-[380px]:h-[250px]
   "
 />
 
@@ -519,6 +525,10 @@ const School = () => {
                   max-[380px]:max-w-[calc(100%-24px)]
                   max-[380px]:px-2
                   max-[380px]:py-1.5
+                  max-[640px]:left-3
+                  max-[640px]:top-3
+                  max-[640px]:px-2
+                  max-[640px]:py-1.5
                 "
                 style={{
                   borderColor: HERO_THEME.borderPrimary,
@@ -532,6 +542,8 @@ const School = () => {
                     tracking-[0.25em]
                     max-[380px]:text-[6px]
                     max-[380px]:tracking-[0.12em]
+                    max-[640px]:text-[6px]
+                    max-[640px]:tracking-[0.12em]
                   "
                   style={{
                     color: HERO_THEME.primary,
@@ -546,6 +558,7 @@ const School = () => {
                     text-[11px]
                     font-semibold
                     max-[380px]:text-[9px]
+                    max-[640px]:text-[9px]
                   "
                   style={{
                     color: HERO_THEME.text,
@@ -568,6 +581,9 @@ const School = () => {
                   max-[380px]:bottom-3
                   max-[380px]:left-3
                   max-[380px]:right-3
+                  max-[640px]:bottom-3
+                  max-[640px]:left-3
+                  max-[640px]:right-3
                 "
               >
                 <div>
@@ -591,6 +607,7 @@ const School = () => {
                       font-bold
                       tracking-[-0.03em]
                       max-[380px]:text-[14px]
+                      max-[640px]:text-[14px]
                     "
                     style={{
                       color: HERO_THEME.text,
@@ -652,6 +669,7 @@ const School = () => {
             max-w-[950px]
             text-center
             max-[380px]:mt-16
+            max-[640px]:mt-16
           "
         >
           <p
